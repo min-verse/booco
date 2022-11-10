@@ -28,7 +28,8 @@ class Book < ApplicationRecord
     def self.search(title_search, author_search)
         title_search.strip!
         author_search.strip!
-        results = where("title like ?", "%#{title_search}%").where("author like ?", "%#{author_search}%")
+        # results = (title_matches(title_search) + author_matches(author_search)).uniq
+        results = where("lower(title) LIKE ?", "%#{title_search.downcase}%").where("lower(author) LIKE ?", "%#{author_search.downcase}%")
         return nil unless results
         results
     end
