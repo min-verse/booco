@@ -52,7 +52,10 @@ class FriendshipsController < ApplicationController
     end
 
     def destroy
-        new_delete = Friendship.where(friend_id:current_user.id).where(user_id:params[:id]).first
+        new_delete = Friendship.where(friend_id:current_user.id).where(user_id:params[:id]).first ? 
+        Friendship.where(friend_id:current_user.id).where(user_id:params[:id]).first :
+        Friendship.where(user_id:current_user.id).where(friend_id:params[:id]).first
+        
         puts new_delete
         if new_delete
             new_delete.destroy
