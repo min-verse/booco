@@ -53,9 +53,10 @@ class FriendshipsController < ApplicationController
 
     def destroy
         new_delete = Friendship.where(friend_id:current_user.id).where(user_id:params[:id]).first
+        puts new_delete
         if new_delete
             new_delete.destroy
-            render json: UserSerializer.new(current_user).pendings, status: :ok
+            render json: {friends:UserSerializer.new(current_user).friends, pendings:UserSerializer.new(current_user).pendings}, status: :ok
         else
             render json: {error: "Request not found"}, status: :unprocessable_entity
         end

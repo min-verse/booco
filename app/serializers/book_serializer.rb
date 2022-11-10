@@ -20,6 +20,7 @@ class BookSerializer < ActiveModel::Serializer
             username:item.user.username
           },
           created_at:item.created_at,
+          time:item.created_at.strftime("%a, %d %b %Y %H:%M:%S"),
           number_of_comments: item.comments.length
         }
       end
