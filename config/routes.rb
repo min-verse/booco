@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :books
   get 'private/test'
   mount ActionCable.server => "/server"
   
