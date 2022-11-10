@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :book_moods
+  resources :moods
+  resources :book_genres
+  resources :genres
   resources :friendships
   resources :comments
   resources :posts
