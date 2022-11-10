@@ -81,6 +81,7 @@ test:
 #
 production:
   <<: *default
-  database: booco_production
-  username: booco
-  password: <%= ENV['BOOCO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # database: booco_production
+  # username: booco
+  # password: <%= ENV['BOOCO_DATABASE_PASSWORD'] %>
