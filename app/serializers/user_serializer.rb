@@ -40,6 +40,14 @@ class UserSerializer < ActiveModel::Serializer
     part_one + part_two
   end
 
+  def fav_genre
+
+  end
+
+  def fav_mood
+    
+  end
+
   def genres
     arr = []
     self.object.books.map do |item|
