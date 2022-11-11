@@ -6,6 +6,6 @@ class Post < ApplicationRecord
 
     validates :book_id, presence: true
     validates :user_id, presence: true
-    validates :title, presence: true, length: {minimum:3, maximum:30}
+    validates :title, presence: true, length: {minimum:3, maximum:50}
     validates :content, presence: true, length: {minimum:3, maximum:1000}
 end
