@@ -17,7 +17,8 @@ class BookSerializer < ActiveModel::Serializer
           title:item.title,
           user:{
             id:item.user.id,
-            username:item.user.username
+            username:item.user.username,
+            avatar:item.user.avatar
           },
           created_at:item.created_at,
           time:item.created_at.strftime("%a, %d %b %Y %H:%M:%S"),
