@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
-        origins 'https://booco.onrender.com'
+        origins 'https://booco.onrender.com', 'https://booco.onrender.com/'
 
         resource '*',
             headers: :any,

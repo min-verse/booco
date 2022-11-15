@@ -1,16 +1,6 @@
 Rails.application.routes.draw do
-  resources :book_chats
-  resources :book_moods
-  resources :moods
-  resources :book_genres
-  resources :genres
-  resources :friendships
-  resources :comments
-  resources :posts
-  resources :readings
-  resources :books
   get 'private/test'
-  mount ActionCable.server => "/server"
+  mount ActionCable.server => "/cable"
   
   resources :book_moods, only: [:create, :index, :show]
   resources :moods, only: [:create, :index, :show]
