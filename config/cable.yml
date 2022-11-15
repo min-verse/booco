@@ -7,4 +7,4 @@ test:
 production:
   adapter: redis
   url: <%= Rails.application.credentials.redis_url_secret_key! %>
-  channel_prefix: booco_production
+  # channel_prefix: booco_production
